@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="card">
+    <h2>Crear Cuenta</h2>
+
+    <form (ngSubmit)="registrar()">
+
+      <label>Nombre *</label>
+      <input
+        type="text"
+        name="nombre"
+        [(ngModel)]="nombre"
+        required
+      />
+
+      <label>Apellido</label>
+      <input
+        type="text"
+        name="apellido"
+        [(ngModel)]="apellido"
+      />
+
+      <label>Correo *</label>
+      <input
+        type="email"
+        name="correo"
+        [(ngModel)]="correo"
+        required
+      />
+
+      <label>Teléfono</label>
+      <input
+        type="text"
+        name="telefono"
+        [(ngModel)]="telefono"
+      />
+
+
+      <div class="password-wrapper">
+  <label for="contrasena">Contraseña *</label>
+  <input
+    type="password"
+    id="contrasena"
+    name="contrasena"
+    [(ngModel)]="contrasena"
+    required
+  />
+        <div class="password-tooltip">
+          La contraseña debe contener:
+          <ul>
+            <li>Mínimo 8 caracteres</li>
+            <li>Una mayúscula</li>
+            <li>Una minúscula</li>
+            <li>Un número</li>
+            <li>Un carácter especial</li>
+          </ul>
+        </div>
+      </div>
+
+      <button type="submit">Registrarme</button>
+
+      <p class="mensaje" *ngIf="mensaje">{{ mensaje }}</p>
+      <p class="error" *ngIf="error">{{ error }}</p>
+
+    </form>
+  </div>
+</div>

@@ -1,0 +1,107 @@
+<div class="perfil-container">
+  <div class="perfil-card">
+
+    <!-- Alertas visibles siempre arriba -->
+    <div *ngIf="mensaje" class="alerta exito">{{ mensaje }}</div>
+    <div *ngIf="error" class="alerta error">{{ error }}</div>
+
+    <!-- Avatar -->
+    <div class="avatar">
+      <span>{{ usuario?.nombre?.charAt(0) }}</span>
+    </div>
+
+    <h2>Mi Perfil</h2>
+    <p class="subtitulo">Información de tu cuenta</p>
+
+    <!-- Estado -->
+    <div class="estado">
+      <span class="estado-label">Estado</span>
+      <span class="estado-valor">Activo</span>
+    </div>
+
+    <!-- Info -->
+    <div class="info" *ngIf="usuario">
+      <div class="info-item">
+        <span class="label">Nombre</span>
+        <span class="value">{{ usuario.nombre }}</span>
+      </div>
+      <div class="info-item">
+        <span class="label">Apellido</span>
+        <span class="value">{{ usuario.apellido }}</span>
+      </div>
+      <div class="info-item">
+        <span class="label">Correo</span>
+        <span class="value">{{ usuario.correo }}</span>
+      </div>
+    </div>
+
+    <!-- Acciones -->
+    <div class="acciones">
+      <button type="button" class="btn-principal" (click)="irCarrito()">Mi carrito</button>
+      <button type="button" class="btn-principal" (click)="abrirCambioPassword()">Cambiar contraseña</button>
+    </div>
+
+    <!-- Cambio contraseña -->
+    <div class="password-box" *ngIf="mostrarCambio">
+      <div class="input-group">
+        <input [type]="mostrarActual ? 'text' : 'password'" placeholder="Contraseña actual"
+          [(ngModel)]="passwordActual">
+        <span class="ojito" (click)="toggleMostrar('actual')">
+          <svg *ngIf="!mostrarActual" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+          <svg *ngIf="mostrarActual" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M17.94 17.94A10.94 10.94 0 0 1 12 20c-7 0-11-8-11-8a21.91 21.91 0 0 1 5.06-5.06"/>
+            <path d="M1 1l22 22"/>
+          </svg>
+        </span>
+      </div>
+
+      <div class="input-group">
+        <input [type]="mostrarNueva ? 'text' : 'password'" placeholder="Nueva contraseña" [(ngModel)]="passwordNueva">
+        <span class="ojito" (click)="toggleMostrar('nueva')">
+          <svg *ngIf="!mostrarNueva" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+          <svg *ngIf="mostrarNueva" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M17.94 17.94A10.94 10.94 0 0 1 12 20c-7 0-11-8-11-8a21.91 21.91 0 0 1 5.06-5.06"/>
+            <path d="M1 1l22 22"/>
+          </svg>
+        </span>
+      </div>
+
+      <div class="input-group">
+        <input [type]="mostrarConfirmar ? 'text' : 'password'" placeholder="Confirmar contraseña"
+          [(ngModel)]="passwordConfirmar">
+        <span class="ojito" (click)="toggleMostrar('confirmar')">
+          <svg *ngIf="!mostrarConfirmar" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+          <svg *ngIf="mostrarConfirmar" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M17.94 17.94A10.94 10.94 0 0 1 12 20c-7 0-11-8-11-8a21.91 21.91 0 0 1 5.06-5.06"/>
+            <path d="M1 1l22 22"/>
+          </svg>
+        </span>
+      </div>
+
+      <button type="button" class="btn-guardar" (click)="cambiarPassword()">Guardar</button>
+      <button type="button" class="btn-cancelar" (click)="cancelarCambio()">Cancelar</button>
+
+    </div>
+  </div>
+</div>

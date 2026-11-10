@@ -1,0 +1,15 @@
+<div class="pedido-wrapper">
+
+  <div class="pedido-card" *ngIf="pedidoConfirmado">
+    <div class="check">✔</div>
+
+    <h2>Pedido confirmado</h2>
+    <p>Gracias por tu compra 💜</p>
+    <p>Tu pedido fue registrado correctamente.</p>
+
+    <button (click)="volver()">
+      Seguir comprando
+    </button>
+  </div>
+
+</div>

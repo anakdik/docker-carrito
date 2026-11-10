@@ -1,0 +1,108 @@
+body{
+  overflow-x: hidden;
+}
+
+.navbar {
+  width: 100%;
+  background: linear-gradient(90deg, #f0f0f5, #e6e6ee); /* gris muy claro con leve lila */
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Logo */
+.logo a {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #2b2b2b; /* grafito */
+  text-decoration: none;
+}
+
+/* Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin-left: 900px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #3a3a3a; /* gris oscuro */
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  background: rgba(0,0,0,0.08);
+  color: #1f1f1f;
+}
+
+/* Activo */
+.active {
+  background: #a59bd6; /* morado muy suave */
+  color: #1f1f1f !important;
+}
+
+/* Badge */
+.badge {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: #3a3a3a;
+  color: #ffffff;
+  font-size: 0.7rem;
+  padding: 2px 7px;
+  border-radius: 50%;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+
+
+/* Logo con imagen */
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  text-decoration: none;
+}
+
+/* Imagen del logo */
+.logo-img {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.15); /* 🔍 ZOOM */
+  border: 2px solid #a59bd6;
+}
+
+
+.logo-link span {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #2b2b2b;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 4px rgba(165, 155, 214, 0.35);
+  transition: transform 0.3s ease, color 0.3s ease;
+  gap: 14px;
+}
+
+.logo-link:hover span {
+  transform: scale(1.05);
+  color: #6f63c6;
+}
+
+
+.logo {
+  margin-left: 40px; /* 👈 mueve logo + texto hacia el centro */
+}

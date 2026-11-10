@@ -1,0 +1,24 @@
+
+# Variables privadas
+.env
+.env.*
+!.env.example
+
+# Dependencias
+**/node_modules/
+
+# Archivos compilados
+**/target/
+**/dist/
+**/build/
+
+# Logs
+*.log
+
+# Temporales
+coverage/
+.DS_Store
+Thumbs.db
+
+# Configuracion de IDE
+**/.idea/

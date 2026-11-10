@@ -1,0 +1,58 @@
+<div class="carrito-container" *ngIf="items.length > 0; else vacio">
+
+  <h2 class="titulo">🛒 Tu Carrito</h2>
+
+  <div class="carrito-items">
+
+    <div class="item" *ngFor="let p of items">
+      <!-- Usamos la imagen pequeña del producto -->
+      <img class="item-img" [src]="getImagenProducto(p.producto.nombre)" [alt]="p.producto.nombre">
+
+      <div class="item-info">
+        <h3>{{ p.producto.nombre }}</h3>
+
+        <p class="precio-unit">
+          Precio unitario: <strong>${{ p.precioUnitario }}</strong>
+        </p>
+
+        <div class="cantidad">
+          <button (click)="restar(p)">−</button>
+          <span class="cantidad-num">{{ p.cantidad }}</span>
+          <button (click)="sumar(p)">+</button>
+        </div>
+
+
+        <p class="subtotal">
+          Subtotal: <strong>${{ p.precioUnitario * p.cantidad }}</strong>
+        </p>
+      </div>
+
+      <button class="delete" (click)="eliminar(p.id)">🗑️</button>
+    </div>
+  </div>
+
+  <div class="total-box">
+    <p>Total a pagar:</p>
+    <strong class="total-number">${{ total }}</strong>
+  </div>
+
+  <button class="mp-button" (click)="hacerPedido()">
+    📦 Hacer pedido
+  </button>
+
+
+  <button class="btn vaciar" (click)="vaciar()">Vaciar carrito</button>
+</div>
+
+<ng-template #vacio>
+  <div class="empty-container">
+    <div class="empty-card">
+      <div class="empty-icon">🧸</div>
+      <h2>Tu carrito está vacío</h2>
+      <p>Aún no has agregado peluches. Encuentra el compañero perfecto para ti 💜</p>
+      <a routerLink="../productos/productos.component.html" class="btn-volver">Explorar productos</a>
+    </div>
+  </div>
+</ng-template>
+
+

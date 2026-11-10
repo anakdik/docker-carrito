@@ -1,0 +1,300 @@
+:root {
+  --morado: #9d8df1;
+  --morado-claro: #cdb4ff;
+  --morado-suave: #f4f1ff;
+  --gris: #f0f0f0;
+  --rosa-suave: #ffd6e8;
+  --gris-deshabilitado: #e0e0e0;
+}
+
+/* 🧺 Contenedor */
+.carrito-container {
+  max-width: 950px;
+  margin: 60px auto;
+  padding: 30px;
+  background: linear-gradient(180deg, #ffffff, var(--gris));
+  border-radius: 30px;
+}
+
+/* 🟣 Título */
+.titulo {
+  text-align: center;
+  font-size: 2.4rem;
+  color: var(--morado);
+  margin-bottom: 40px;
+}
+
+/* 📦 Items */
+.carrito-items {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* 🧸 Item */
+.item {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #ffffff, var(--morado-suave));
+  border-radius: 22px;
+  padding: 20px;
+  box-shadow: 0 15px 30px rgba(157, 141, 241, 0.25);
+  gap: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 25px 45px rgba(157, 141, 241, 0.35);
+}
+
+/* 🖼 Imagen */
+/* 🧸 Tamaño base para todos */
+.item-img {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+}
+
+/* 🦈 Tiburón más pequeño */
+.item-img[alt*="tiburón"],
+.item-img[alt*="tiburon"] {
+  width: 85px;
+  height: 85px;
+}
+
+/* 🐻 Oso un poco más pequeño */
+.item-img[alt*="oso"] {
+  width: 95px;
+  height: 95px;
+}
+
+
+
+
+/* ℹ Info */
+.item-info {
+  flex: 1;
+}
+
+.item-info h3 {
+  margin: 0;
+  color: #6a5acd;
+  font-size: 1.3rem;
+}
+
+.precio-unit {
+  margin: 10px 0;
+  color: #666;
+}
+
+/* ➕➖ Cantidad */
+.cantidad {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cantidad button {
+  background: linear-gradient(135deg, var(--morado-claro), var(--morado));
+  border: none;
+  color: rgb(146, 50, 190);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.3rem;
+  transition: transform 0.2s ease;
+}
+
+.cantidad button:hover {
+  transform: scale(1.15) rotate(8deg);
+}
+
+.cantidad-num {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #444;
+}
+
+/* 💰 Subtotal */
+.subtotal {
+  margin-top: 12px;
+  font-weight: bold;
+  color: #555;
+}
+
+/* ❌ Eliminar */
+.delete {
+  background: linear-gradient(135deg, #e8b7ff, #e085cd);
+  border: none;
+  color: rgb(197, 89, 89);
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: transform 0.2s ease;
+}
+
+.delete:hover {
+  transform: scale(1.15) rotate(10deg);
+}
+
+/* 🧾 Total */
+.total-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  padding: 25px;
+  background: linear-gradient(135deg, var(--morado-suave), var(--rosa-suave));
+  border-radius: 22px;
+  font-size: 1.4rem;
+  box-shadow: 0 10px 25px rgba(157, 141, 241, 0.2);
+}
+
+.total-number {
+  color: var(--morado);
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* 💳 Botón pagar */
+.mp-button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 16px;
+  background-color: rgb(209, 169, 255);
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 18px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mp-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(157, 141, 241, 0.4);
+}
+
+/* 🧹 Vaciar */
+.vaciar {
+  width: 100%;
+  margin-top: 14px;
+  padding: 14px;
+  background: transparent;
+  border: 2px dashed var(--morado);
+  color: rgb(0, 0, 7);
+  border-radius: 18px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.vaciar:hover {
+  background: var(--morado-suave);
+}
+
+/* 😿 Carrito vacío */
+.empty {
+  text-align: center;
+  margin-top: 70px;
+}
+
+.empty-img {
+  width: 180px;
+  opacity: 0.85;
+}
+
+.volver {
+  display: inline-block;
+  margin-top: 25px;
+  background: linear-gradient(135deg, var(--morado), var(--morado-claro));
+  color: white;
+  padding: 14px 30px;
+  border-radius: 24px;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.volver:hover {
+  transform: scale(1.08);
+}
+
+
+/* 🌸 Contenedor */
+.empty-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  padding: 20px;
+}
+
+/* 🧸 Card */
+.empty-card {
+  background: linear-gradient(180deg, #ffffff, #f6f5ff);
+  padding: 42px 36px;
+  border-radius: 28px;
+  text-align: center;
+  max-width: 420px;
+  width: 100%;
+  box-shadow:
+    0 20px 40px rgba(138, 109, 245, 0.18),
+    0 0 0 1px rgba(138, 109, 245, 0.12);
+  animation: fadeUp 0.45s ease;
+}
+
+/* 🧸 Ícono */
+.empty-icon {
+  font-size: 4.2rem;
+  margin-bottom: 16px;
+  filter: drop-shadow(0 6px 12px rgba(138, 109, 245, 0.35));
+}
+
+/* 🟣 Título */
+.empty-card h2 {
+  font-size: 1.9rem;
+  color: #2e2e2e;
+  margin-bottom: 10px;
+}
+
+/* 💬 Texto */
+.empty-card p {
+  font-size: 1.05rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+/* 🔘 Botón */
+.btn-volver {
+  display: inline-block;
+  padding: 14px 34px;
+  background: linear-gradient(135deg, #8a6df5, #b8a6ff);
+  color: white;
+  border-radius: 22px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+.btn-volver:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px rgba(138, 109, 245, 0.45);
+}
+
+/* ✨ Animación */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

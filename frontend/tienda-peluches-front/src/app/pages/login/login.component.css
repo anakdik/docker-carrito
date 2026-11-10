@@ -1,0 +1,121 @@
+:root {
+  --morado-profundo: #5b21b6;
+  --morado-principal: #8b5cf6;
+  --morado-claro: #ede9fe;
+  --morado-suave: #faf8ff;
+  --gris-claro: #f3f3f3;
+  --gris-medio: #d0d0d0;
+  --texto-oscuro: #222222;
+  --texto-secundario: #555555;
+}
+
+
+
+/* 🌸 Fondo con textura suave */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px 20px 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top right, var(--morado-claro), transparent 60%),
+    linear-gradient(180deg, var(--morado-suave), var(--gris-claro));
+}
+
+/* 🧸 Card elegante */
+.card {
+  width: 460px;
+  background: #ffffff;
+  padding: 38px;
+  border-radius: 26px;
+  margin-top: 100px;
+  border: 2px solid var(--morado-claro);
+  box-shadow: 0 22px 45px rgba(0,0,0,0.14);
+  animation: fadeUp 0.45s ease;
+}
+
+
+
+/* 🟣 Título */
+h2 {
+  text-align: center;
+  margin-bottom: 8px;
+  color: var(--texto-oscuro);
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.sub {
+  text-align: center;
+  color: var(--texto-secundario);
+  margin-bottom: 28px;
+  font-size: 1.05rem;
+}
+
+/* 📝 Labels */
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--texto-oscuro);
+}
+
+/* ✏ Inputs suaves */
+input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: 2px solid var(--gris-medio);
+  margin-bottom: 22px;
+  font-size: 1rem;
+  color: var(--texto-oscuro);
+  background: #fafafa;
+  transition: border 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  background: white;
+  border-color: var(--morado-principal);
+  box-shadow: 0 0 0 4px rgba(184, 166, 255, 0.25);
+}
+
+/* 🔘 Botón protagonista */
+button {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #8a6df5, #b8a6ff);
+  color: white;
+  border: none;
+  border-radius: 18px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 35px rgba(138, 109, 245, 0.45);
+}
+
+
+
+
+
+/* ✨ Animación */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.error {
+  color: #e63946;
+  margin-top: 18px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+}
+

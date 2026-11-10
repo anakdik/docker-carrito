@@ -1,0 +1,64 @@
+<div class="productos-container">
+
+  <h1 class="titulo">🧸 Nuestros Peluches</h1>
+
+  <p class="cargando" *ngIf="cargando">
+    Cargando productos...
+  </p>
+
+  <div class="productos-grid" *ngIf="!cargando">
+
+    <div class="card" *ngFor="let p of productos">
+
+      <!-- 🖼 Imagen -->
+      <div class="img-wrapper">
+        <img
+          class="producto-img"
+          [src]="getImagenProducto(p.nombre)"
+          [alt]="p.nombre"
+        />
+      </div>
+
+      <!-- ℹ Información -->
+      <div class="producto-info">
+
+        <h3 class="producto-nombre">
+          {{ p.nombre }}
+        </h3>
+
+        <p class="producto-descripcion">
+          {{ p.descripcion }}
+        </p>
+
+        <!-- ✨ Chips -->
+        <div class="specs">
+          <span class="spec chip-categoria">🏷 {{ p.categoria }}</span>
+          <span class="spec chip-tamano">📏 {{ p.tamano }}</span>
+          <span class="spec chip-color">🎨 {{ p.color }}</span>
+          <span class="spec chip-stock">📦 {{ p.stock }} disponibles</span>
+        </div>
+
+        <p class="producto-precio">
+          $ {{ p.precio | number:'1.0-0' }}
+        </p>
+
+        <button
+          class="btn-carrito"
+          (click)="agregarAlCarrito(p)"
+        >
+          Agregar al carrito 🛒
+        </button>
+
+        
+
+      </div>
+    </div>
+  </div>
+
+ <div class="toast" *ngIf="mostrarToast">
+    {{ mensajeToast }}
+  </div>
+  
+</div>
+
+
